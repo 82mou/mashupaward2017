@@ -5,11 +5,11 @@
 	window.onload = function(){
 		if ( checkFileApi() && checkCanvas(canvas) ){
 			//ファイル選択
-			let file_image = document.getElementsByClassName('js-file-image')[0];
+			let file_image = document.querySelector('.js-file-image');
 			file_image.addEventListener('change', selectReadfile, false);
-			let rotateBtn = document.getElementById('js-rotate-btn');
+			let rotateBtn = document.querySelector('.js-rotate-btn');
 			rotateBtn.addEventListener('click', drawRotate, false);
-			let submitBtn = document.getElementById('js-submit-btn');
+			let submitBtn = document.querySelector('.js-submit-btn');
 			submitBtn.addEventListener('click', postFile, false);
 		}
 	};
@@ -138,7 +138,7 @@
 		wh.innerHTML = 'width:' + w + ' height:' + h;
 	}
 	function postFile() {
-		var formData = new FormData(document.getElementById('data'));
+		var formData = new FormData(document.querySelector('.data'));
 
 		axios.post('https://hatsushinokimochi-api.herokuapp.com/', formData)
 			.then(function (response) {
