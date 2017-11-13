@@ -140,115 +140,11 @@
 	function postFile() {
 		var formData = new FormData(document.getElementById('data'));
 
-
-
-		//$.ajax('https://hatsushinokimochi-api.herokuapp.com/',
-		//	{
-		//		type: 'post',
-		//		data: formData,
-		//	}
-		//)
-		//	.done(function(data) {
-		//
-		//	})
-		//	.fail(function() {
-		//	});
-
-
-
-
-
 		axios.post('https://hatsushinokimochi-api.herokuapp.com/', formData)
 			.then(function (response) {
-				//let data = {
-				//	"Results": {
-				//		"$": {"xmlns": "jws"},
-				//		"NumberOfResults": ["8"],
-				//		"DisplayPerPage": ["5"],
-				//		"DisplayFrom": ["1"],
-				//		"APIVersion": ["1.1"],
-				//		"Onsen": [
-				//			{
-				//				"OnsenName": ["積翠寺温泉"],
-				//				"OnsenNameKana": ["せきすいじおんせん"],
-				//				"OnsenID": ["1028"],
-				//				"OnsenAddress": ["山梨県甲府市上積翠寺町"],
-				//				"Area": [
-				//					{
-				//						"Region": ["甲信越"],
-				//						"Prefecture": ["山梨県"],
-				//						"LargeArea": ["甲府・湯村・昇仙峡"],
-				//						"SmallArea": ["甲府"]
-				//					}
-				//				],
-				//				"NatureOfOnsen": ["含鉄泉"],
-				//				"OnsenAreaID": ["50148"]
-				//			}, {
-				//				"OnsenName": ["甲府湯村温泉"],
-				//				"OnsenNameKana": ["こうふゆむらおんせん"],
-				//				"OnsenID": ["1029"],
-				//				"OnsenAddress": ["山梨県甲府市湯村"],
-				//				"Area": [
-				//					{
-				//						"Region": ["甲信越"],
-				//						"Prefecture": ["山梨県"],
-				//						"LargeArea": ["甲府・湯村・昇仙峡"],
-				//						"SmallArea": ["甲府"]
-				//					}
-				//				],
-				//				"NatureOfOnsen": ["単純温泉", "硫黄泉", "硫酸塩泉"],
-				//				"OnsenAreaID": ["50149"]
-				//			}, {
-				//				"OnsenName": ["甲府温泉"],
-				//				"OnsenNameKana": ["こうふおんせん"],
-				//				"OnsenID": ["1030"],
-				//				"OnsenAddress": ["山梨県甲府市丸ノ内"],
-				//				"Area": [
-				//					{
-				//						"Region": ["甲信越"],
-				//						"Prefecture": ["山梨県"],
-				//						"LargeArea": ["甲府・湯村・昇仙峡"],
-				//						"SmallArea": ["甲府"]
-				//					}
-				//				],
-				//				"NatureOfOnsen": ["塩化物泉"],
-				//				"OnsenAreaID": ["50150"]
-				//			}, {
-				//				"OnsenName": ["神の湯温泉"],
-				//				"OnsenNameKana": ["かみのゆおんせん"],
-				//				"OnsenID": ["1031"],
-				//				"OnsenAddress": ["山梨県北巨摩郡双葉町竜地"],
-				//				"Area": [
-				//					{
-				//						"Region": ["甲信越"],
-				//						"Prefecture": ["山梨県"],
-				//						"LargeArea": ["甲府・湯村・昇仙峡"],
-				//						"SmallArea": ["甲府"]
-				//					}
-				//				],
-				//				"NatureOfOnsen": ["塩化物泉"],
-				//				"OnsenAreaID": ["50151"]
-				//			}, {
-				//				"OnsenName": ["竜王ラドン温泉"],
-				//				"OnsenNameKana": ["りゅうおうらどんおんせん"],
-				//				"OnsenID": ["1060"],
-				//				"OnsenAddress": ["山梨県中巨摩郡竜王町富竹新田"],
-				//				"Area": [
-				//					{
-				//						"Region": ["甲信越"],
-				//						"Prefecture": ["山梨県"],
-				//						"LargeArea": ["甲府・湯村・昇仙峡"],
-				//						"SmallArea": ["甲府"]
-				//					}
-				//				],
-				//				"NatureOfOnsen": ["塩化物泉"],
-				//				"OnsenAreaID": ["50152"]
-				//			}
-				//		]
-				//	}
-				//};
 
 				let $table = document.querySelector('.js-table');
+				$table.parentNode.removeChild($table);
 
 				for (let i = 0; i < response.data.Results.Onsen.length; i++) {
 					let tr = document.createElement('tr');
