@@ -5,12 +5,12 @@
 	window.onload = function(){
 		if ( checkFileApi() && checkCanvas(canvas) ){
 			//ファイル選択
-			let file_image = document.querySelector('.js-file-image');
+			let file_image = document.querySelector('#js-file-image');
 			file_image.addEventListener('change', selectReadfile, false);
-			let rotateBtn = document.querySelector('.js-rotate-btn');
-			rotateBtn.addEventListener('click', drawRotate, false);
-			let submitBtn = document.querySelector('.js-submit-btn');
+			let submitBtn = document.querySelector('#js-submit-btn');
 			submitBtn.addEventListener('click', postFile, false);
+			//let rotateBtn = document.querySelector('.js-rotate-btn');
+			//rotateBtn.addEventListener('click', drawRotate, false);
 		}
 	};
 	//canvas に対応しているか
